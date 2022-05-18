@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 const Task = ({ task, refetch }) => {
     const handleDelete = () => {
-        fetch(`http://localhost:4000/task/${task._id}`, {
+        fetch(`https://todo-app-ctafsiras-server.herokuapp.com/task/${task._id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -21,7 +21,7 @@ const Task = ({ task, refetch }) => {
             complete: true,
             description: toast.description
         }
-        fetch(`http://localhost:4000/task/${task._id}`, {
+        fetch(`https://todo-app-ctafsiras-server.herokuapp.com/task/${task._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

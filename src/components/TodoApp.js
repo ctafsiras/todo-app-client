@@ -5,10 +5,10 @@ import { useQuery } from 'react-query';
 import Task from './Task';
 
 const TodoApp = () => {
-    const { data: tasks, isLoading, refetch } = useQuery('tasks', () => fetch('http://localhost:4000/tasks').then(res => res.json()))
+    const { data: tasks, isLoading, refetch } = useQuery('tasks', () => fetch('https://todo-app-ctafsiras-server.herokuapp.com/tasks').then(res => res.json()))
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:4000/tasks', {
+        fetch('https://todo-app-ctafsiras-server.herokuapp.com/tasks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
