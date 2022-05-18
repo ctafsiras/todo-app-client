@@ -30,6 +30,7 @@ const TodoApp = () => {
     }
     return (
         <div>
+            <h2 className='text-3xl my-3 font-bold text-primary'>ToDo App</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input placeholder="New Task" className="input input-bordered w-full max-w-xs mt-3" {...register("task", { required: true })} /> <br />
                 <textarea className="textarea textarea-bordered w-full max-w-xs mt-3" placeholder="Task Description" {...register("description", { required: true })} /> <br />
@@ -37,6 +38,7 @@ const TodoApp = () => {
 
                 <input className="btn w-full max-w-xs mt-3" type="submit" />
             </form>
+            <h2 className='text-2xl my-3 text-primary'>All The Tasks You Have..</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5'>
                 {
                     tasks.slice(0).reverse().map(task => <Task
